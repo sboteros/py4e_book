@@ -24,13 +24,15 @@ rate = input('Enter rate:')
 try :
     hours = float(hours)
     rate = float(rate)
-    if hours > 40 :
-        pay = (rate * 40) + (1.5 * rate * (hours - 40))
-    else :
-        pay = rate * hours
-    print('Pay:', pay)
 except :
     print('Error, please enter numeric input')
+    quit()
+
+if hours > 40 :
+    pay = (rate * 40) + (1.5 * rate * (hours - 40))
+else :
+    pay = rate * hours
+print('Pay:', pay)
 
 # 3. Score between 0 and 1
 score = input('Enter score:')
