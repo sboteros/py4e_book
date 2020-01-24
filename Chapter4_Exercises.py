@@ -6,8 +6,19 @@
 
 # 6. Rewrite gross payment as a function (`computepay`) with two arguments
 # (`hours` and `rate`)
-
-def computepay(hours, rate) :
+# 4.6 Write a program to prompt the user for hours and rate per hour using input
+# to compute gross pay. Pay should be the normal rate for hours up to 40 and
+# time-and-a-half for the hourly rate for all hours worked above 40 hours. Put
+# the logic to do the computation of pay in a function called computepay() and
+# use the function to do the computation. The function should return a value.
+# Use 45 hours and a rate of 10.50 per hour to test the program (the pay should
+# be 498.75). You should use input to read a string and float() to convert the
+# string to a number. Do not worry about error checking the user input unless
+# you want to - you can assume the user types numbers properly. Do not name your
+# variable sum or use the sum() function.
+def computepay() :
+    hours = input('Enter hours:')
+    rate = input('Enter rate:')
     try :
         hours = float(hours)
         rate = float(rate)
@@ -19,14 +30,15 @@ def computepay(hours, rate) :
         pay = (rate * 40) + (1.5 * rate * (hours - 40))
     else :
         pay = rate * hours
-    print('Pay:', pay)
+    return print(pay)
 
-computepay(45, 10)
+computepay()
 
 # 7. Rewrite grade program as a function (`computegrade`) that take a score as
 # its input and returns a grade as a string.
 
-def computegrade(score) :
+def computegrade() :
+    score = input('Enter score:')
     try :
         score = float(score)
     except :
@@ -44,9 +56,3 @@ def computegrade(score) :
         print('D')
     else :
         print('F')
-
-computegrade(0.95)
-computegrade('perfect')
-computegrade(10.0)
-computegrade('0.75')
-computegrade('0.5')
